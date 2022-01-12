@@ -136,6 +136,10 @@ const ProductScreen = ({ history, match }) => {
                     <p>{review.comment}</p>
                   </ListGroup.Item>
                 ))}
+              </ListGroup>
+            </Col>
+            <Col md={6}>
+              <ListGroup variant='flush'>
                 <ListGroup.Item>
                   <h2>Write a Customer Review</h2>
                   {successProductReview && <Message variant='success'>Review submitted successfully</Message>}
@@ -164,7 +168,7 @@ const ProductScreen = ({ history, match }) => {
                     </Form>
                   ) : (
                     <Message>
-                      Please <Link to='/login'>sign in</Link> to write a review{' '}
+                      Please <Link to='/login'>sign in</Link> to write a review
                     </Message>
                   )}
                 </ListGroup.Item>
