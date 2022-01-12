@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
-import { LinkContainer } from 'react-router-bootstrap'
-import { Table, Button } from 'react-bootstrap'
+import { Button, Table } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import Message from '../components/Message'
+import { LinkContainer } from 'react-router-bootstrap'
+import { deleteUser, listUsers } from '../actions/userActions'
 import Loader from '../components/Loader'
-import { listUsers, deleteUser } from '../actions/userActions'
+import Message from '../components/Message'
 
 const UserListScreen = ({ history }) => {
   const dispatch = useDispatch()
@@ -59,11 +59,7 @@ const UserListScreen = ({ history }) => {
                   <a href={`mailto:${user.email}`}>{user.email}</a>
                 </td>
                 <td>
-                  {user.isAdmin ? (
-                    <i className='fas fa-check' style={{ color: 'green' }}></i>
-                  ) : (
-                    <i className='fas fa-times' style={{ color: 'red' }}></i>
-                  )}
+                  {user.isAdmin ? <i className='fas fa-check' style={{ color: 'green' }}></i> : <i className='fas fa-times' style={{ color: 'red' }}></i>}
                 </td>
                 <td>
                   <LinkContainer to={`/admin/user/${user._id}/edit`}>
@@ -71,11 +67,7 @@ const UserListScreen = ({ history }) => {
                       <i className='fas fa-edit'></i>
                     </Button>
                   </LinkContainer>
-                  <Button
-                    variant='danger'
-                    className='btn-sm'
-                    onClick={() => deleteHandler(user._id)}
-                  >
+                  <Button variant='danger' className='btn-sm' onClick={() => deleteHandler(user._id)}>
                     <i className='fas fa-trash'></i>
                   </Button>
                 </td>

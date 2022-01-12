@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Col, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col } from 'react-bootstrap'
-import Product from '../components/Product'
-import Message from '../components/Message'
-import Loader from '../components/Loader'
-import Paginate from '../components/Paginate'
-import ProductCarousel from '../components/ProductCarousel'
-import Meta from '../components/Meta'
+import { Link } from 'react-router-dom'
 import { listProducts } from '../actions/productActions'
+import Loader from '../components/Loader'
+import Message from '../components/Message'
+import Meta from '../components/Meta'
+import Paginate from '../components/Paginate'
+import Product from '../components/Product'
+import ProductCarousel from '../components/ProductCarousel'
 
 const HomeScreen = ({ match }) => {
   const keyword = match.params.keyword
@@ -48,11 +48,7 @@ const HomeScreen = ({ match }) => {
               </Col>
             ))}
           </Row>
-          <Paginate
-            pages={pages}
-            page={page}
-            keyword={keyword ? keyword : ''}
-          />
+          <Paginate pages={pages} page={page} keyword={keyword ? keyword : ''} />
         </>
       )}
     </>
