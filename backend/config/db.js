@@ -1,3 +1,4 @@
+import colors from 'colors'
 import mongoose from 'mongoose'
 
 const connectDB = async () => {
@@ -7,7 +8,7 @@ const connectDB = async () => {
       useNewUrlParser: true,
     })
 
-    console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline)
+    console.log(colors.cyan.bold.underline(`TCL Database Connected: ${conn.connection.host}`))
   } catch (error) {
     console.error(`Error: ${error.message}`.red.underline.bold)
     process.exit(1)

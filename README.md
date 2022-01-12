@@ -23,6 +23,7 @@ This is the course project for my [MERN eCommerce From Scratch](https://www.udem
 - Database seeder (products & users)
 
 ## Note on Issues
+
 Please do not post issues here that are related to your own code when taking the course. Add those in the Udemy Q/A. If you clone THIS repo and there are issues, then you can submit
 
 ## Usage
@@ -40,11 +41,16 @@ You can also install and setup Babel if you would like
 Create a .env file in then root and add the following
 
 ```
-NODE_ENV = development
-PORT = 5000
-MONGO_URI = your mongodb uri
-JWT_SECRET = 'abc123'
-PAYPAL_CLIENT_ID = your paypal client id
+
+    name: 'Admin',
+    email: 'admin@example.com',
+    password: bcrypt.hashSync('45683968', 10),
+    isAdmin: true,
+
+    name: 'user',
+    email: 'user@example.com',
+    password: bcrypt.hashSync('123456', 10),
+
 ```
 
 ### Install Dependencies (frontend & backend)
@@ -100,7 +106,6 @@ jane@example.com (Customer)
 123456
 ```
 
-
 ## License
 
 The MIT License
@@ -124,4 +129,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
 # ProShop
